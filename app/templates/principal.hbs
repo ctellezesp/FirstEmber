@@ -1,0 +1,13 @@
+<h3>Connected</h3>
+{{input type="text" value=name}}
+<button {{action 'crearMovie' name on="click"}}>Crear</button>
+{{#if model}}
+	<ul>
+{{#each model as |movie|}}
+	<li>{{movie.name}}--<button {{action 'borrarMovie' movie on='click'}}>Borrar</button></li>
+{{/each }}
+	</ul>
+{{else}}
+<br>
+No hay peliculas para mostrar
+{{/if}}	
